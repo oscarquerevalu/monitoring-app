@@ -4,4 +4,6 @@
 3. mvn clean install
 4. Go to the target folder
 5. java -jar monitoring-app.jar
-6. Verify if response in http://localhost:8080/measurement/1
+6. Verify the REST API response with: curl -v http://localhost:8080/measurement/1
+7. Create a measurement: curl -d '{"gas_measumement":100,"hot_water_measumement":100, "cold_water_measumement":100, "userId" : "1"}' -H 'Content-Type: application/json' http://localhost:8080/measurement/create
+8. List the measurement by User id = "1": curl -v http://localhost:8080/measurement/1
